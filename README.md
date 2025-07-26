@@ -135,14 +135,11 @@ The target data model prioritises:
 - Add support for configuration-driven pipeline execution
 - Enhance API integration with circuit breaker patterns
 - Develop automated data quality reporting dashboard
-- Update to the CREATE_tables.sql execution within the PySpark notebook is required
 
 ## Known Limitations
 - Foreign key constraints temporarily disabled during data loading (requires merge strategy implementation)
-- DDL execution limitations through Spark: originally implemented IF NOT EXISTS... CREATE TABLE but this is not possible for Spark. Altered the implementation to what currently exists. The alternative option would have been to use the PyODBC library.
 - Hard-coded validation rules require parameterisation
 - Assert statements require kernel restart for proper function when the .env file is changed.
-- The create tables SQL statements are being executed successfully as part of the setup pipeline but they are not showing in the database. Requires investigation.
 
 ## Technical Dependencies
 - PySpark (distributed data processing)
