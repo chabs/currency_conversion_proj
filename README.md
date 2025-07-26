@@ -55,7 +55,7 @@ After evaluating multiple caching approaches:
 - **Session caching:** Utilised for reference data
 - **External caching solutions:** Rejected as over-engineered for current requirements
 
-<i> Please note this currently has not been implemented due to time constraints but above detailes the options outlined and selected choice </i>
+<i> Please note this currently has not been implemented due to time constraints but above details the options outlined and selected choice </i>
 
 ### Stage 5: Data Storage & Target Schema
 **Technical Decisions:**
@@ -135,8 +135,7 @@ The target data model prioritises:
 - Add support for configuration-driven pipeline execution
 - Enhance API integration with circuit breaker patterns
 - Develop automated data quality reporting dashboard
-- Executing the create table SQL statements via the Spark engine is limiting ability
-to add primary key constraints.
+- Update to the CREATE_tables.sql execution within the PySpark notebook is required
 
 ## Known Limitations
 - Foreign key constraints temporarily disabled during data loading (requires merge strategy implementation)
