@@ -1,0 +1,34 @@
+﻿Data Source,Sales Data,,,,,,
+,,,,,,,
+Attribute Name,Load Data Type,Target Data Type,Description,PK,FK,Nullable allowed,Transformations and validators
+OrderID,String,String,Unique identifier of an order. With the ProductiD this will create a composite key to identifiy unique records,Y,N,N,Entire row is duplicated
+ProductID,String,String,Foreign Key to identify the product in the order,Y,Y,N,Should join on the product table
+SaleAmount,String,Decimal,Total amount of the sale for the product in an order. Assumed this already includes the discount. This should be in the currency USD. This can be negative if it is a returned item.,N,N,N,Convert to USD where Currency is not USD to begin with.
+OrderDate,String,Date,The date of the sale which should be in the format…,N,N,N,Format check and should be greater than 01-01-2023 but not greater than current year
+Region,String,String,"Region of the sale complete and should be either: North, East, South, West",N,Format check and should be greater than 01-01-2023 but not greater than current year,N,Can only be of one of four categories
+CustomerID,String,String,Unique idenitifer of a customer,N,Y,N,Should be of a certain format
+Discount,String,Decimal,"The total amount of the discount applied to the SaleAmount, if applicable.",N,N,Y,
+Currency,String,String,Three letter currency code which should only be USD at target,N,N,N,
+,,,,,,,
+Data Source,Product Reference,,,,,,
+,,,,,,,
+Attribute Name,Load Data Type,Target Data Type,Description,PK,FK,Nullable allowed,Transformations and validators
+ProductID,String,String,Unique identifier of a product,Y,Y,N,
+ProductName,String,String,Unique name of the product,N,N,N,
+ProductReference,String,String,Category of the product,N,N,N,
+,,,,,,,
+Data Source,API,,,,,,
+,,,,,,,
+Attribute Name,Load Data Type,Target Data Type,Description,PK,FK,Nullable allowed,Transformations and validators
+result,,,Not needed,,,,
+provider,,,,,,,
+documentation,,,,,,,
+terms_of_use,,,,,,,
+time_last_update_unix,,,,,,,
+time_last_update_utc,,,,,,,
+time_next_update_unix,,,,,,,
+time_next_update_utc,,,,,,,
+time_eol_unix,,,Validate upon,,,,
+base_currency,,,Currency converted from,,,,
+currency,,,Target currency,,,,
+rate,,,Rate,,,,

@@ -1,0 +1,1 @@
+CREATE INDEX IX_order_order_date ON [order](order_date);
